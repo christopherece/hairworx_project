@@ -6,10 +6,41 @@
  * Made By MaterializeCSS.com
  */
 
+
+
+
+body{
+  background-color:  #ffffff;
+  color:  #442a08;
+}
+
+.logo{
+  width: 80px;
+}
+
+nav ul li.active > a{
+  background-color: #C4A484;
+  color: #FFFFFF;
+
+}
+
 nav ul a,
 nav .brand-logo {
-  color: #444;
+  color: #C4A484;
 }
+
+nav ul a:hover{
+  background-color: #C4A484;
+  color: #FFFFFF;
+}
+
+.headingText{
+  color: #333333;
+  text-shadow: 2px 2px 0px #FFFFFF, 5px 4px 0px rgba(0,0,0,0.15);
+  color: #333333;
+}
+
+
 
 p {
   line-height: 2rem;

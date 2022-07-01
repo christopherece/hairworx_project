@@ -26,12 +26,13 @@ SECRET_KEY = 'django-insecure-p&r%&k5v2a(q91iqtbjvi9wgoi70mug$=!&0syo$xs*zprqk^@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '192.168.10.232']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'services.apps.ServicesConfig',
     'pages.apps.PagesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -77,8 +78,10 @@ WSGI_APPLICATION = 'hairworx.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'hairworx',
+        'USER': 'postgres',
+        'PASSWORD': '@dm!nL0c@lH0$t',
     }
 }
 
@@ -122,6 +125,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'hairworx/static')
 ]
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
 
 
 # Default primary key field type
