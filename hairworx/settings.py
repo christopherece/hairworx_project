@@ -26,12 +26,13 @@ SECRET_KEY = 'django-insecure-p&r%&k5v2a(q91iqtbjvi9wgoi70mug$=!&0syo$xs*zprqk^@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '192.168.10.232']
+ALLOWED_HOSTS = ['localhost', '192.168.10.232','hairworx.ddns.net']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'gallery.apps.GalleryConfig',
     'services.apps.ServicesConfig',
     'pages.apps.PagesConfig',
     'django.contrib.admin',
