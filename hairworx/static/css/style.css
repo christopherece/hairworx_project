@@ -9,36 +9,55 @@
 
 
 
-body{
+/* body{
   background-color:  #ffffff;
   color:  #442a08;
-}
+} */
 
 .logo{
-  width: 80px;
+  height: 120px;
+  width: 160px;
 }
 
-nav ul li.active > a{
-  background-color: #C4A484;
-  color: #FFFFFF;
+i.material-icons:not(.medium){
+  font-size: 60px !important;
+  color: #C4A484;
+  padding: 40% 0;
 
 }
+
+
+nav {
+
+  height: 120px;
+   line-height: 120px;
+}
+
+nav ul li.active{
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  background-color: rgba(0,0,0,0);
+}
+
+nav ul li a:hover{
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  background-color: rgba(0,0,0,0);
+}
+
 
 nav ul a,
 nav .brand-logo {
   color: #C4A484;
 }
 
-nav ul a:hover{
-  background-color: #C4A484;
-  color: #FFFFFF;
-}
 
 .headingText{
   color: #333333;
   text-shadow: 2px 2px 0px #FFFFFF, 5px 4px 0px rgba(0,0,0,0.15);
-  color: #333333;
 }
+
+
 
 
 
@@ -74,6 +93,14 @@ p {
   #index-banner .section {
     top: 0;
   }
+
+}
+
+@media only screen and (max-width : 480px) {
+  #index-banner .section {
+    top: 0;
+  }
+
 }
 
 .icon-block {
@@ -86,3 +113,5 @@ p {
 footer.page-footer {
   margin: 0;
 }
+
+

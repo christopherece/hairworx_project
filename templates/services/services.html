@@ -2,17 +2,18 @@
 {% load static %}
 {% block content %}
 
+
+
 <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
       <div class="container">
-        <br><br>
-        <h1 class="headingText header center brown-text text-lighten-4">Services Offered</h1>
-        <div class="row center">
+        <h1 style="padding: 10% 0 0 0 ;" class="headingText header center brown-text text-lighten-2">Services Offered</h1>
+        <!-- <div class="row center">
           <h5 class="header col s12 light">
             Your Personal Hair Expert
           </h5>
         </div>
-        <br><br>
+        <br><br> -->
 
       </div>
     </div>
@@ -25,26 +26,154 @@
       <div class="row">
         <h4 class="center">
           <span class="brown-text">Professional</span> Services</h4>
+          <div class="row">
+            <h5>
+              Starting Price
+            </h5>
+            {% for service in startPrices %}
+              <div class="col s12 m4">
+              <div class="card">
+                <div class="card-image medium">
+                  <img src="{{ service.photo.url }}" height="350px" alt="">
+                </div>
+                <div class="card-content">
+                  <!-- <p>From ${{service.price}}</p> -->
+                  <p>{{service.name}}</p>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
         
-        {% for service in services %}
+      <!-- Colour Services -->
+      <div class="row">
+        <h5>
+          Colour Services
+        </h5>
+        {% for service in colourServices %}
           <div class="col s12 m4">
           <div class="card">
             <div class="card-image medium">
-              <img src="{{ service.photo.url }}" height="220px" alt="">
-              <span class="card-title">{{service.name}}</span>
+              <img src="{{ service.photo.url }}" height="350px" alt="">
             </div>
             <div class="card-content">
-              <p>From ${{service.price}}
-              </p>
+              <!-- <p>From ${{service.price}}</p> -->
+              <p>{{service.name}}</p>
             </div>
           </div>
         </div>
         {% endfor %}
+      </div>
+
+      <!-- Lightening Servies -->
+      <div class="row">
+        <h5>
+          Lightening Services
+        </h5>
+        {% for service in lighteningServices %}
+          <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image medium">
+              <img src="{{ service.photo.url }}" height="350px" alt="">
+            </div>
+            <div class="card-content">
+              <!-- <p>From ${{service.price}}</p> -->
+              <p>{{service.name}}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <!-- Kerat Servies -->
+
+      <div class="row">
+        <h5>
+          Kerat Services
+        </h5>
+        {% for service in kerats %}
+          <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image medium">
+              <img src="{{ service.photo.url }}" height="350px" alt="">
+            </div>
+            <div class="card-content">
+              <!-- <p>From ${{service.price}}</p> -->
+              <p>{{service.name}}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+            <!-- Treatments Servies -->
+            <div class="row">
+              <h5>
+                Treatment Services
+              </h5>
+              {% for service in treatments %}
+                <div class="col s12 m4">
+                <div class="card">
+                  <div class="card-image medium">
+                    <img src="{{ service.photo.url }}" height="350px" alt="">
+                  </div>
+                  <div class="card-content">
+                    <!-- <p>From ${{service.price}}</p> -->
+                      <p>{{service.name}}</p>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+
+            <!-- styles -->
+            <div class="row">
+              <h5>
+                Style Services
+              </h5>
+              {% for service in styles %}
+                <div class="col s12 m4">
+                <div class="card">
+                  <div class="card-image medium">
+                    <img src="{{ service.photo.url }}" height="350px" alt="">
+                  </div>
+                  <div class="card-content">
+                    <!-- <p>From ${{service.price}}</p> -->
+                      <p>{{service.name}}</p>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+<!-- Extensions -->
+            <div class="row">
+              <h5>
+                Extensions
+              </h5>
+              {% for service in extensions %}
+                <div class="col s12 m4">
+                <div class="card">
+                  <div class="card-image medium">
+                    <img src="{{ service.photo.url }}" height="350px" alt="">
+                  </div>
+                  <div class="card-content">
+                    <!-- <p>From ${{service.price}}</p> -->
+                      <p>{{service.name}}</p>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
 
       </div>
+
      
     </div>
   </section>
+
+  <script>
+      
+  </script>
 
   
 

@@ -15,11 +15,12 @@
   <title>Hairworx</title>
 </head>
 <body>
+<div class="nav-fixed">
     <nav class="white" role="navigation">
         <div class="nav-wrapper container">
           <div class="logocontainer">
-            <a id="logo-container" href="#"  class="brand-logo">
-              <!-- <img src="{% static 'img/logo.png' %}" clss="logo" alt=""> -->
+            <a id="logo-container" href="{% url 'index' %}"  class="brand-logo">
+              <img src="{% static 'img/logo1.jpeg' %}" class="logo" alt="">
             </a>
           </div>
           
@@ -30,36 +31,43 @@
               {% else %}
                 class=""
               {% endif %}
-            ><a href="{% url 'index' %}">Home</a></li>
+            ><a style="font-size: 1.3em;" href="{% url 'index' %}">Home</a></li>
             <li
               {% if 'services' in request.path %}
                 class="active"
               {% else %}
                 class=""
               {% endif %}
-            ><a href="{% url 'services' %}">Services</a></li>
-            <li><a href="#">Contact</a></li>
+            ><a style="font-size: 1.3em;" href="{% url 'services' %}">Services</a></li>
+            <!-- <li><a href="#">Contact</a></li> -->
             <li
               {% if 'gallery' in request.path %}
                 class="active"
               {% else %}
                 class=""
               {% endif %}
-            ><a href="{% url 'gallery' %}">Gallery</a></li>
-            <li><a href="#">Products</a></li>
+            ><a style="font-size:1.3em;" href="{% url 'gallery' %}">Gallery</a></li>
+            <li
+                {% if 'products' in request.path %}
+                class="active"
+                {% else %}
+                class=""
+                {% endif %}
+            ><a style="font-size: 1.3em;" href="{% url 'products' %}">Products</a></li>
 
           </ul>
     
           <ul id="nav-mobile" class="sidenav">
             <li><a href="{% url 'index' %}">Home</a></li>
             <li><a href="{% url 'services' %}">Services</a></li>
-            <li><a href="#">Contact</a></li>
+            <!-- <li><a href="#">Contact</a></li> -->
             <li><a href="{% url 'gallery' %}">Gallery</a></li>
-            <li><a href="#">Products</a></li>
+            <li><a href="{% url 'products' %}">Products</a></li>
           </ul>
           <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
       </nav>
+</div>
     {% block content %}
 
     {% endblock %}
@@ -68,16 +76,55 @@
   <footer class="page-footer brown darken-4">
     <div class="footer-copyright">
       <div class="container">
-        
+        Copyright &copy; MeztroInhinyeroElektronico | 2022
       </div>
     </div>
   </footer>
 
     <!--  Scripts-->
-    <script src="{% static 'js/jquery-3.3.1.min.js' %} "></script>
-    <script src="{% static 'js/materialize.js' %} "></script>
+    <script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %} "></script>
+    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+    <script type="text/javascript" src="{% static 'js/materialize.js' %} "></script>
+    <script>
+      $(document).ready(function () {
+         // INIT SELECT LIST         
+        $('.modal').modal({
+          complete: function(){alert('Your request is subitted')}
+        });
+        $('.carousel.carousel-slider').carousel({ 
+            fullWidth: true,
+            indicators: true,
+            interval:6000,
+            height: 100,
+          });
+
+        $('select').formSelect();
+
+        $('.datepicker').datepicker({
+              format: 'yyyy-mm-dd'
+          }).val();
+
+        $('.timepicker').timepicker({
+            twelveHour: true,
+            vibrate: true,
+
+        }).val();
+
+        setTimeout(function(){
+            $('#message').fadeOut('slow');
+        }, 3000);
+
+        
+
+      });
+      
+
+      
+    </script>
+    
     <script src="{% static 'js/main.js' %} "></script>
     <script src="{% static 'js/init.js' %}"></script>
     
+
 </body>
 </html>

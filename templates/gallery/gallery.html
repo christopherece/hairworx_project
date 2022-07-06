@@ -6,16 +6,13 @@
   <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
       <div class="container">
-        <br><br>
-        <h1 class="headingText header center brown-text text-lighten-4">Gallery</h1>
-        <div class="row center">
+        <h1 style="padding: 10% 0 0 0 ;" class="headingText header center brown-text text-lighten-2">Gallery</h1>
+        <!-- <div class="row center">
           <h5 class="header col s12 light">
             Your Personal Hair Expert
           </h5>
-        </div>
+        </div> -->
         
-        <br><br>
-
       </div>
     </div>
     <div class="parallax"><img src="{% static 'img/bg.jpg' %}" alt="Unsplashed background img 1"></div>
@@ -23,9 +20,9 @@
 
 <section id="gallery" class="section section-gallery scrollspy">
     <div class="container">
-      <h4 class="center">
+      <!-- <h4 class="center">
         <span class="brown-text">Photo </span> Gallery
-      </h4>
+      </h4> -->
       
       <section id="popular" class="section section-popular scrollspy">
           <div class="row">
@@ -33,10 +30,10 @@
               <span class="brown-text">Professional</span> Services</h4>
             
             {% for gal in galleries %}
-              <div class="col s12 m3">
+              <div class="col s12 m4">
               <div class="card">
                 <div class="card-image large">
-                  <img src="{{ gal.photo.url }}" height="220px"  width="auto" alt="">
+                  <img src="{{ gal.photo.url }}" height="350px" alt="">
                   <!-- <span class="card-title">{{gal.name}}</span> -->
                 </div>
               </div>

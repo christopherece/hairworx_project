@@ -1,0 +1,198 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <h1 style="padding: 10% 0 0 0 ;" class="headingText header center brown-text text-lighten-2">Book an Appointment</h1>
+        <!-- <div class="row center">
+          <h5 class="header col s12 light">
+            Your Personal Hair Expert
+          </h5>
+        </div>
+        <br><br> -->
+
+      </div>
+    </div>
+    <div class="parallax"><img src="{% static 'img/bg5.jpg' %}" alt="Unsplashed background img 1"></div>
+  </div>
+
+
+  <section id="popular" class="section section-popular scrollspy brown lighten-5 ">
+    <div class="container">
+          <div class="row">
+            <h4>Book for Appointment</h4>
+            <form action="{% url 'booking' %}" method="POST">
+              {% csrf_token %}
+
+              <div class="row">
+                <div class="input-field col m6 s12">
+                  <select name="location" required>
+                    <option value="" class="active" selected disabled>Please Select Location</option>
+                    <option value="Onehunga">Onehunga</option>
+                    <option value="Pukekohe">Papatoetoe</option>
+                  </select>
+                  <label for="location">Preferred Location</label>
+                </div> 
+  
+                <div class="input-field col m6 s12">
+                  <input placeholder="Name" name="name" id="name" type="text" value="" required>
+                  <label for="name" class="active" name="phone">Name</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <!-- Phone -->
+                <div class="input-field col m6 s12">
+                  <input placeholder="Phone" name="phone" id="phone" type="text" value="" required>
+                  <label for="phone" class="active" name="phone">Phone</label>
+                </div>
+                          <!-- Email  -->
+                <div class="input-field col m6 s12">
+                  <input placeholder="Email" name="email" id="email" type="email" value="">
+                  <label for="email" class="active" name="email">Email</label>
+                </div>
+              </div>
+              
+              <h5>Services</h5>    
+                 <br>    
+              <!-- MULTIPLE SELECT -->
+              <div class="input-field">
+                <select name="general" multiple>
+                  <!-- <option value="" disabled selected>Select Option</option> -->
+                  <option value="Consultation">Consultation</option>
+                </select>
+                <label >General</label>
+              </div>
+
+              <!-- MULTIPLE SELECT -->
+            <div class="input-field">
+              <select multiple name="shampoocutstyle">
+                <!-- <option value="" disabled selected>Select Option</option> -->
+                <option value="ladies Cut Short">Ladies Cut & Style Short - 30 mins</option>
+                <option value="ladies Cut Long">Ladies Cut & Style Long - 45 mins</option>
+                <option value="Fringe Trim">Fringe Trim 15 mins</option>  
+                <option value="Mens Cut">Mens Cut & Style 30 mins</option>   
+                <option value="Under 12">Under 12 Kids Cut30 mins</option>         
+              </select>
+              <label>Shampoo, Cut and Style</label>
+            </div>
+
+              <!-- MULTIPLE SELECT -->
+              <div class="input-field">
+                <select multiple name="barber">                  
+                  <option value="shave">Shave</option>   
+                  <option value="faceScrub">Face Scrub</option>         
+                </select>
+                <label>Barber Services</label>
+              </div>
+
+              <!-- MULTIPLE SELECT -->
+              <div class="input-field">
+                <select multiple>                  
+                  <option value="Retouch Permanent Colour">Retouch Permanent Colour</option>   
+                  <option value="Global Permanent Colour">Global Permanent Colour</option>  
+                  <option value="Global Tone on Tone (Semi Perm)">Global Tone on Tone (Semi Perm)</option> 
+                  <option value="Retouch Tone on Tone (Semi Perm)">Retouch Tone on Tone (Semi Perm)</option>        
+                </select>
+                <label>Colour Services</label>
+              </div>
+
+              <!-- MULTIPLE SELECT -->
+              <div class="input-field">
+                <select multiple>                  
+                  <option value="Partial Highlights">Partial Highlights</option>   
+                  <option value="Half-Head Highlights">Half-Head Highlights</option>  
+                  <option value="ull-Head Highlights">Full-Head Highlights</option> 
+                  <option value="Ombre">Ombre</option>  
+                  <option value="Balayage">Balayage</option>  
+                  <option value="Retouch Global Lightener">Retouch Global Lightener</option> 
+                  <option value="Global Lightener">Global Lightener</option>
+                  <option value="Colot Cleanse">Colot Cleanse</option> 
+                  <option value="Toner">Toner</option> 
+                </select>
+                <label>Lightening Services</label>
+              </div>
+
+              <!-- MULTIPLE SELECT -->
+              <div class="input-field">
+                <select multiple>                  
+                  <option value="Keratin Smoothing">Keratin Smoothing</option>   
+                  <option value="hemical Straightening">Chemical Straightening</option>  
+                  <option value="Permanent Wave">Permanent Wave</option>        
+                </select>
+                <label>Keratin/Straightening/Permanent Wave</label>
+              </div>
+
+              <!-- MULTIPLE SELECT -->
+              <div class="input-field">
+                <select multiple>                  
+                  <option value="Hair Spa">Hair Spa</option>   
+                  <option value="Structure Complex and Lightening Service">Structure Complex + Lightening Service</option>  
+                  <option value="Structure Complex Stand Alone">Structure Complex Stand Alone</option>        
+                </select>
+                <label>Treatment</label>
+              </div>
+
+               <!-- MULTIPLE SELECT -->
+               <div class="input-field">
+                <select multiple>                  
+                  <option value="Blow Wave Only (No Irons)">Blow Wave Only (No Irons)</option>   
+                  <option value="Blow Wave + Irons">Blow Wave + Irons</option>  
+                  <option value="xpress Styling Service (Irons)">Express Styling Service (Irons)</option>  
+                  <option value="Hair Spa and Style">Hair Spa and Style</option>      
+                </select>
+                <label>Styling</label>
+              </div>
+
+              <!-- MULTIPLE SELECT -->
+              <div class="input-field">
+                <select multiple>                  
+                  <option value="Hair Extension">Hair Extension</option>   
+                  <option value="Hair Extension Maintenance">Hair Extension Maintenance</option>                      
+                </select>
+                <label>Extensions</label>
+              </div>
+
+          <!-- Preferres Stylist -->
+              <div class="input-field">
+                <select name="stylist" required>
+                  <option value="No preference"  selected>No preference</option>
+                  <option value="Arnie">Arnie</option>
+                  <option value="Dana">Dana</option>
+                </select>
+                <label>Preferred Stylist</label>
+              </div> 
+
+              <div class="row">
+                      <!-- DATE PICKER -->
+                <div class="input-field col m6 s12">
+                  <input type="date" class="datepicker" name="date_chosen" required>
+                  <label for="date">Choose a Date</label>
+                </div>
+        
+                <!-- TIME PICKER -->
+                <div class="input-field col m6 s12">
+                  <input type="time" class="timepicker" name="time_chosen" required>
+                  <label for="time">Choose a Time</label>
+                </div>   
+              </div>
+            
+                <div>
+                <input type="submit" value="Submit" class="btn">
+              </div>
+            </form>
+
+            
+          </div>
+    </div>
+  </section>
+
+  
+
+  
+
+{% endblock %}

@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 import os
 
+from psycopg2 import DATETIME
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -26,12 +28,14 @@ SECRET_KEY = 'django-insecure-p&r%&k5v2a(q91iqtbjvi9wgoi70mug$=!&0syo$xs*zprqk^@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '192.168.10.232','hairworx.ddns.net']
+ALLOWED_HOSTS = ['localhost', '192.168.10.232','hairworx.ddns.net','119.224.29.234']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'products.apps.ProductsConfig',
+    'bookings.apps.BookingsConfig',
     'gallery.apps.GalleryConfig',
     'services.apps.ServicesConfig',
     'pages.apps.PagesConfig',
@@ -111,9 +115,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Pacific/Auckland'
 
-USE_I18N = True
+DATETIME_FORMAT = 'M d, Y'
+
+USE_I18N = False
 
 USE_TZ = True
 
@@ -136,3 +142,11 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#Messagse
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.INFO: 'blue-text',
+    messages.ERROR: 'red-text',
+
+}
