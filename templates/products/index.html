@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <h1 style="padding: 10% 0 0 0 ;" class="headingText header center brown-text text-lighten-2">Shop</h1>
+        <!-- <div class="row center">
+          <h5 class="header col s12 light">
+                Products Available for Purchase
+          </h5>
+        </div> -->
+
+      </div>
+    </div>
+    <div class="parallax"><img src="{% static 'img/bg5.jpg' %}" alt="Unsplashed background img 1"></div>
+  </div>
+
+
+  <section id="popular" class="section section-popular scrollspy">
+    <div class="container">
+      <div class="row">
+        <h4 class="center">
+          <span class="brown-text">Products Available for Purchase
+          </span> </h4>
+          <div class="row">
+            {% for product in products %}
+              <div class="col s12 m6">
+              <div class="card">
+                <div class="card-image medium">
+                  <img src="{{ product.photo.url }}" height="350px" alt="">
+                  
+                </div>
+                <div class="card-content">
+                  <p style="font-size:18px">From <b>${{product.price}}</b></p>
+                  <p>{{product.name}}</p>
+                  <p>{{product.description}}</p>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        
+      
+    </div>
+  </section>
+
+  
+
+{% endblock %}
