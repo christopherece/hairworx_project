@@ -84,9 +84,9 @@ WSGI_APPLICATION = 'hairworx.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'hairworxadmin',
-        'USER': 'hairworxadmin',
-        'PASSWORD': '!pass1234',
+        'NAME': 'hairworx',
+        'USER': 'postgres',
+        'PASSWORD': '@dm!nL0c@lH0$t',
     }
 }
 
