@@ -21,160 +21,137 @@
   </div>
 
 
-  <section id="popular" class="section section-popular scrollspy">
+  <section class="section section-features grey lighten-3">
     <div class="container">
+      <h4 class="brown-text text-darken-1 center">Professional &amp; Services</h4>
+      <h6 class="grey-text text-darken-2 center">
+        Our commitment to customer satisfaction has helped make 
+        Hair Worx a leading Hairdresser in the area. 
+        Whatever you’re looking for, we can make it happen. 
+        We have years of experience delivering unique and modern looks, 
+        but we know how to recreate all the classics as well. 
+        Swing by and get the look you’ve always wanted from experts who care.      
+      </h6>
+      <br>
+      <br>
+      <!-- Row 1 -->
       <div class="row">
-        <h4 class="center">
-          <span class="brown-text">Professional</span> Services</h4>
-          <div class="row">
-            <h5>
-              Starting Price
-            </h5>
-            {% for service in startPrices %}
-              <div class="col s12 m4">
-              <div class="card">
-                <div class="card-image medium">
-                  <img src="{{ service.photo.url }}" alt="">
-                </div>
-                <div class="card-content">
-                  <!-- <p>From ${{service.price}}</p> -->
-                  <p>{{service.name}}</p>
-                </div>
-              </div>
-            </div>
-            {% endfor %}
-          </div>
-        
-      <!-- Colour Services -->
-      <div class="row">
-        <h5>
-          Colour Services
-        </h5>
-        {% for service in colourServices %}
-          <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image medium">
-              <img src="{{ service.photo.url }}" height="350px" alt="">
-            </div>
-            <div class="card-content">
-              <!-- <p>From ${{service.price}}</p> -->
-              <p>{{service.name}}</p>
-            </div>
-          </div>
+        <div class="col s12 m3">
+          <h4>
+            Starting Price
+          </h4>
+          <p>
+            1. Ladies Cut & Style (Short) - $55.00
+          </p>
+          <p>
+            2. Ladies Cut & Style (Long) - $60.00
+          </p>
+          <p>
+            3. Fringe Trim - $15.00
+          </p>
+          <p>
+            4. Men's Cut & Style - $38.00
+          </p>
+          <p>
+            5. Men's Beard Shape - $25.00
+          </p>
+          <p>
+            6. Under 12 y/o Kids Cut - $30.00
+          </p>
+          <p>
+            7. Shampoo - $15.00
+          </p>
+            
         </div>
-        {% endfor %}
-      </div>
-
-      <!-- Lightening Servies -->
-      <div class="row">
-        <h5>
-          Lightening Services
-        </h5>
-        {% for service in lighteningServices %}
-          <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image medium">
-              <img src="{{ service.photo.url }}" height="350px" alt="">
-            </div>
-            <div class="card-content">
-              <!-- <p>From ${{service.price}}</p> -->
-              <p>{{service.name}}</p>
-            </div>
-          </div>
+        <div class="col s12 m3">
+          <h4>
+             Colour Services
+          </h4>
+          <p>
+            1. Global Colour - $130.00
+          </p>
+          <p>
+            2. Retouch Root Colour - $95.00
+          </p>
+          <p>
+            3. Global Tone and Tone (Semi-Permanent) - $150.00
+          </p>
         </div>
-        {% endfor %}
-      </div>
 
-      <!-- Kerat Servies -->
-
-      <div class="row">
-        <h5>
-          Kerat Services
-        </h5>
-        {% for service in kerats %}
-          <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image medium">
-              <img src="{{ service.photo.url }}" height="350px" alt="">
-            </div>
-            <div class="card-content">
-              <!-- <p>From ${{service.price}}</p> -->
-              <p>{{service.name}}</p>
-            </div>
-          </div>
+        <div class="col s12 m3">
+          <h4>
+             Lightening Services
+          </h4>
+          <p>
+            1. Partial Highlights - $125.00
+          </p>
+          <p>
+            2. Half Head Highlights - $140.00
+          </p>
+          <p>
+            3. Full Headlights - $175.00
+          </p>
+          <p>
+            4. Ombre - $210.00
+          </p>
+          <p>
+            5. Balayage - $210.00
+          </p>
+          <p>
+            6. Global Lightener  - $165.00
+          </p>
+          <p>
+            7. Colour Cleanse - $125.00
+          </p>
+          <p>
+            3. Toner - $50.00
+          </p>
         </div>
-        {% endfor %}
+
+        <div class="col s12 m3">
+          <h4>
+            Treatment
+          </h4>
+          <p>
+            1. Hair Spa - $55.00
+          </p>
+          <p>
+            2. Structure Complex - $55.00
+          </p>
+          <p>
+            3. Protein Treatment - $70.00
+          </p>
+        </div>
       </div>
 
-            <!-- Treatments Servies -->
-            <div class="row">
-              <h5>
-                Treatment Services
-              </h5>
-              {% for service in treatments %}
-                <div class="col s12 m4">
-                <div class="card">
-                  <div class="card-image medium">
-                    <img src="{{ service.photo.url }}" height="350px" alt="">
-                  </div>
-                  <div class="card-content">
-                    <!-- <p>From ${{service.price}}</p> -->
-                      <p>{{service.name}}</p>
-                  </div>
-                </div>
-              </div>
-              {% endfor %}
-            </div>
-
-            <!-- styles -->
-            <div class="row">
-              <h5>
-                Style Services
-              </h5>
-              {% for service in styles %}
-                <div class="col s12 m4">
-                <div class="card">
-                  <div class="card-image medium">
-                    <img src="{{ service.photo.url }}" height="350px" alt="">
-                  </div>
-                  <div class="card-content">
-                    <!-- <p>From ${{service.price}}</p> -->
-                      <p>{{service.name}}</p>
-                  </div>
-                </div>
-              </div>
-              {% endfor %}
-            </div>
-<!-- Extensions -->
-            <div class="row">
-              <h5>
-                Extensions
-              </h5>
-              {% for service in extensions %}
-                <div class="col s12 m4">
-                <div class="card">
-                  <div class="card-image medium">
-                    <img src="{{ service.photo.url }}" height="350px" alt="">
-                  </div>
-                  <div class="card-content">
-                    <!-- <p>From ${{service.price}}</p> -->
-                      <p>{{service.name}}</p>
-                  </div>
-                </div>
-              </div>
-              {% endfor %}
-            </div>
-
-      </div>
-
-     
+      <!-- Row2 -->
+      <div class="row">
+        <div class="col s12 m3">
+          <h4>
+             Styling
+          </h4>
+          <p>
+            1. Blow Wave Only - $45.00
+          </p>
+          <p>
+            2. Blow Wave + Iron - $50.00
+          </p>
+          <p>
+            3. Hair-Ups and Style - $90.00
+          </p>
+        </div>
+        <div class="col s12 m3">
+          <h4>
+             Extension
+          </h4>
+          <p>
+            1. Hair Extension - $675.00
+          </p>
+          <p>
+            2. Hair Extension Maintenance - $250.00
+          </p>
     </div>
   </section>
-
-  <script>
-      
-  </script>
-
   
 
 {% endblock %}
