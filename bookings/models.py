@@ -14,10 +14,10 @@ class Booking(models.Model):
         ('No Prefered','No Prefered'),
         ('Arnie','Arnie'),
         ('Dana','Dana'),
-        ('Purvi/Alison', 'Purvi/Alison'),
+        ('Purvi Alison', 'Purvi Alison'),
         ('Ailyn', 'Ailyn'),
         ('Mary','Mary'),
-        ('Alison')
+        ('Alison','Alison')
 
     )
     name = models.CharField(max_length=200)
