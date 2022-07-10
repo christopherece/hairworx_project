@@ -59,8 +59,8 @@
               <div class="row">
                <!-- Preferres Stylist -->
                <div class="input-field col m6 s12">
-                <select name="stylist" required>
-                  <option value="No preference"  selected>No preference</option>
+                <select name="stylist_name" required>
+                  <option value="No Preference"  selected>No preference</option>
                   <option value="Arnie">Arnie</option>
                   <option value="Dana">Dana</option>
                 </select>
@@ -73,7 +73,7 @@
                  <br>    
               <!-- MULTIPLE SELECT -->
               <div class="input-field">
-                <select name="general" multiple>
+                <select type="checkbox" multiple name="services[]">
                   <!-- <option value="" disabled selected>Select Option</option> -->
                   <option value="Consultation">Consultation</option>
                 </select>
@@ -82,8 +82,7 @@
 
               <!-- MULTIPLE SELECT -->
             <div class="input-field">
-              <select multiple name="shampoocutstyle">
-                <!-- <option value="" disabled selected>Select Option</option> -->
+              <select type="checkbox" multiple name="services[]">
                 <option value="ladies Cut Short">Ladies Cut & Style Short - 30 mins</option>
                 <option value="ladies Cut Long">Ladies Cut & Style Long - 45 mins</option>
                 <option value="Fringe Trim">Fringe Trim 15 mins</option>  
@@ -95,7 +94,7 @@
 
               <!-- MULTIPLE SELECT -->
               <div class="input-field">
-                <select multiple name="barber">                  
+                <select type="checkbox" multiple name="services[]">                  
                   <option value="shave">Shave</option>   
                   <option value="faceScrub">Face Scrub</option>         
                 </select>
@@ -104,7 +103,7 @@
 
               <!-- MULTIPLE SELECT -->
               <div class="input-field">
-                <select multiple>                  
+                <select type="checkbox" multiple name="services[]">
                   <option value="Retouch Permanent Colour">Retouch Permanent Colour</option>   
                   <option value="Global Permanent Colour">Global Permanent Colour</option>  
                   <option value="Global Tone on Tone (Semi Perm)">Global Tone on Tone (Semi Perm)</option> 
@@ -115,7 +114,7 @@
 
               <!-- MULTIPLE SELECT -->
               <div class="input-field">
-                <select multiple>                  
+                <select type="checkbox" multiple name="services[]">
                   <option value="Partial Highlights">Partial Highlights</option>   
                   <option value="Half-Head Highlights">Half-Head Highlights</option>  
                   <option value="ull-Head Highlights">Full-Head Highlights</option> 
@@ -131,7 +130,7 @@
 
               <!-- MULTIPLE SELECT -->
               <div class="input-field">
-                <select multiple>                  
+                <select type="checkbox" multiple name="services[]">
                   <option value="Keratin Smoothing">Keratin Smoothing</option>   
                   <option value="hemical Straightening">Chemical Straightening</option>  
                   <option value="Permanent Wave">Permanent Wave</option>        
@@ -141,7 +140,7 @@
 
               <!-- MULTIPLE SELECT -->
               <div class="input-field">
-                <select multiple>                  
+                <select type="checkbox" multiple name="services[]">
                   <option value="Hair Spa">Hair Spa</option>   
                   <option value="Structure Complex and Lightening Service">Structure Complex + Lightening Service</option>  
                   <option value="Structure Complex Stand Alone">Structure Complex Stand Alone</option>        
@@ -151,7 +150,7 @@
 
                <!-- MULTIPLE SELECT -->
                <div class="input-field">
-                <select multiple>                  
+                <select type="checkbox" multiple name="services[]">
                   <option value="Blow Wave Only (No Irons)">Blow Wave Only (No Irons)</option>   
                   <option value="Blow Wave + Irons">Blow Wave + Irons</option>  
                   <option value="xpress Styling Service (Irons)">Express Styling Service (Irons)</option>  
@@ -162,7 +161,7 @@
 
               <!-- MULTIPLE SELECT -->
               <div class="input-field">
-                <select multiple>                  
+                <select type="checkbox" multiple name="services[]">
                   <option value="Hair Extension">Hair Extension</option>   
                   <option value="Hair Extension Maintenance">Hair Extension Maintenance</option>                      
                 </select>

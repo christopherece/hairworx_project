@@ -1,16 +1,18 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Booking
+from .models import Booking, Service
 
 class BookingAdmin(admin.ModelAdmin):
     list_display = (
-        'name', 'email', 'phone',
+        'stylist_name','name', 'email', 'phone',
         'location','date_chosen','time_chosen',
-        'description'
+        'services'
     )
 
 admin.site.register(Booking, BookingAdmin)
+admin.site.register(Service)
+
 
 
 
