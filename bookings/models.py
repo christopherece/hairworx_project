@@ -13,7 +13,12 @@ class Booking(models.Model):
     STYLIST = (
         ('No Prefered','No Prefered'),
         ('Arnie','Arnie'),
-        ('Dana','Dana')
+        ('Dana','Dana'),
+        ('Purvi/Alison', 'Purvi/Alison'),
+        ('Ailyn', 'Ailyn'),
+        ('Mary','Mary'),
+        ('Alison')
+
     )
     name = models.CharField(max_length=200)
     email = models.CharField(max_length=200, blank=True, null=True)
