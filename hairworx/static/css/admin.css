@@ -1,0 +1,24 @@
+#header{
+    height: 50px;
+    background: #C4A484;
+    color: #fff;
+}
+
+#branding h1{
+    color: #fff;
+}
+
+a:link,
+a:visited{
+    color: #C4A484;
+}
+
+div.breadcrumbs {
+    background: #A0522D;
+}
+
+
+.module h2, .module caption, .inline-group h2{
+    background: #C4A484;
+    color: #fff;
+}
