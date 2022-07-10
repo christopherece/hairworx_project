@@ -5,7 +5,7 @@ from .models import Booking, Service
 
 class BookingAdmin(admin.ModelAdmin):
     list_display = (
-        'stylist_name','name', 'email', 'phone',
+        'name','stylist_name', 'email', 'phone',
         'location','date_chosen','time_chosen',
         'services'
     )
