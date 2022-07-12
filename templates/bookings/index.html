@@ -30,8 +30,8 @@
 
               <div class="row">
                 <div class="input-field col m6 s12">
-                  <select  name="location" required>
-                    <option value="" class="active" selected disabled>Please Select Location</option>
+                  <select  name="location" id="location" required>
+                    <option value=""  class="active" selected disabled>Please Select Location</option>
                     <option value="Onehunga">Onehunga</option>
                     <option value="Pukekohe">Papatoetoe</option>
                   </select>
@@ -59,8 +59,8 @@
               <div class="row">
                <!-- Preferres Stylist -->
                <div class="input-field col m6 s12">
-                <select name="stylist_name" required>
-                  <option value="No Preference"  selected>No preference</option>
+                <select name="stylist_name" id="stylist_name" required>
+                  <option value=""  selected>No preference</option>
                   <option value="Arnie">Arnie</option>
                   <option value="Dana">Dana</option>
                   <option value="Dana">Purvi</option>
@@ -202,6 +202,16 @@
 
   
 
+
+
+
+  
+
+  
+
   
 
 {% endblock %}
+
+
+

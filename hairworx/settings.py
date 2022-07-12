@@ -34,6 +34,7 @@ ALLOWED_HOSTS = ['localhost', '192.168.10.232','hairworx.ddns.net','119.224.29.2
 # Application definition
 
 INSTALLED_APPS = [
+    'users.apps.UsersConfig',
     'products.apps.ProductsConfig',
     'bookings.apps.BookingsConfig',
     'gallery.apps.GalleryConfig',
