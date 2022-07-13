@@ -1,19 +1,31 @@
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import BookingForm
 
-from bookings.models import Booking, Service
+from bookings.models import Booking, Employee, Service, Site
 
-# Create your views here.
+def get_stylists_ajax(request):
+    if request.method == "POST":
+        site_id = request.POST['site_id']
+        try:
+            site = Site.objects.filter(id = site_id).first()
+            employees = Employee.objects.filter(site = site)
+        except Exception:
+            data['error_message'] = 'error'
+            return JsonResponse(data)
+        
+        return JsonResponse(list(employees.values('id', 'name')), safe = False) 
+
+
 def createBooking(request):
     services = Service.objects.all()
-    context = {'services':services}
+    sites = Site.objects.all()
+    context = {'services':services, 'sites':sites}
     return render(request, 'bookings/index.html', context)
 
 
 def booking(request):
-
-    
 
     if request.method == 'POST':
         name = request.POST['name']
@@ -24,10 +36,7 @@ def booking(request):
         description = request.POST.get('description')
         date_chosen = request.POST.get('date_chosen', False)
         time_chosen = request.POST.get('time_chosen', False)
-        services = request.POST.getlist('services[]'),            
-
-        print(services)
-    
+        services = request.POST.getlist('services[]'),                
 
         booking = Booking(
             name = name,

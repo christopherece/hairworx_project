@@ -1,4 +1,4 @@
-from enum import unique
+from statistics import mode
 from unicodedata import name
 import uuid
 from django.db import models
@@ -7,8 +7,8 @@ from django.contrib.postgres.fields import ArrayField
 # Create your models here.
 class Booking(models.Model):
     SITE = (
-        ('Papatoetoe', 'Papatoetoe'),
-        ('Onehunga','Onehunga')
+        ('1', 'Onehunga'),
+        ('2','Papatoetoe')
     )
     STYLIST = (
         ('No Prefered','No Prefered'),
@@ -42,6 +42,22 @@ class Booking(models.Model):
 class Service(models.Model):
     name = models.CharField(max_length=200)
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
+
+    def __str__(self):
+        return self.name
+
+class Site(models.Model):
+    name = models.CharField(max_length=200)
+    address = models.CharField(max_length=200)
+
+
+    def __str__(self):
+        return self.name
+
+class Employee(models.Model):
+    site = models.ForeignKey(Site, on_delete=models.DO_NOTHING)
+    name = models.CharField(max_length=200)
+    contact = models.CharField(max_length=200)
 
     def __str__(self):
         return self.name

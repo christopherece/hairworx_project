@@ -87,10 +87,39 @@
     <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
     <script type="text/javascript" src="{% static 'js/materialize.js' %} "></script>
     <script>
-      $(document).ready(function () {
+          const employeeSelect = document.getElementById('#stylist_name')
+          $("#location").change(function () {
+              const siteId = $(this).val();  // get the selected subject ID from the HTML dropdown list 
+              $.ajax({                       // initialize an AJAX request
+                  type: "POST",
+                  url: '{% url "get_stylists_ajax" %}',
+                  data: {
+                      'site_id': siteId,       // add the country id to the POST parameters
+                      'csrfmiddlewaretoken':$('input[name=csrfmiddlewaretoken]').val(),
+                  },
+                  success: function (data) {   // `data` is from `get_topics_ajax` view function
+                      let html_data = '';
+                      data.forEach(function (data) {
+                        console.log(data)
+                          html_data += `<option value="${data.name}">${data.name}</option>`
+                          $("#stylistName").html(html_data); // replace the contents of the topic input with the data that came from the server
+
+                     });
+
+                  }
+              });
+            });
+
+    </script>
+    <script>
+        $(document).ready(function () {
+          M.AutoInit();
+
+            //Booking 
+        
          // INIT SELECT LIST         
         $('.modal').modal({
-          complete: function(){alert('Your request is subitted')}
+          complete: function(){alert('Your request is submitted')}
         });
         $('.carousel.carousel-slider').carousel({ 
             fullWidth: true,
@@ -98,6 +127,7 @@
             interval:6000,
             height: 100,
           });
+        
 
         $('select').formSelect();
 

@@ -4,7 +4,7 @@
 
 
 
-<div id="index-banner" class="parallax-container">
+<div id="index-banner" class=" parallax-container">
     <div class="section no-pad-bot">
       <div class="container">
         <h1 style="padding: 10% 0 0 0 ;" class="headingText header center brown-text text-lighten-2">Book an Appointment</h1>
@@ -21,7 +21,7 @@
   </div>
 
 
-  <section id="popular" class="section section-popular scrollspy brown lighten-5 ">
+  <section id="popular" class="no-autoinit section section-popular scrollspy brown lighten-5 ">
     <div class="container">
           <div class="row">
             <h4>Book for Appointment</h4>
@@ -31,19 +31,24 @@
               <div class="row">
                 <div class="input-field col m6 s12">
                   <select  name="location" id="location" required>
-                    <option value=""  class="active" selected disabled>Please Select Location</option>
-                    <option value="Onehunga">Onehunga</option>
-                    <option value="Pukekohe">Papatoetoe</option>
+                    <option value="0"  class="active" selected disabled>Please Select Location</option>
+                    {% for site in sites %}
+                      <option value="{{site.id}}">{{site.name}}</option>
+                    {% endfor %}
+                    
                   </select>
                   <label for="location">Preferred Location</label>
                 </div> 
-  
-                <div class="input-field col m6 s12">
-                  <input placeholder="Name" name="name" id="name" type="text" value="" required>
-                  <label for="name" class="active" name="phone">Name</label>
-                </div>
-              </div>
 
+                <!-- Preferres Stylist -->
+               <div class="input-field col m6 s12">
+                  <select name="stylist_name" id="stylistName" required class="browser-default">
+
+                  </select>
+                </div> 
+              </div>
+  
+                
               <div class="row">
                 <!-- Phone -->
                 <div class="input-field col m6 s12">
@@ -57,24 +62,13 @@
                 </div>
               </div>
               <div class="row">
-               <!-- Preferres Stylist -->
-               <div class="input-field col m6 s12">
-                <select name="stylist_name" id="stylist_name" required>
-                  <option value=""  selected>No preference</option>
-                  <option value="Arnie">Arnie</option>
-                  <option value="Dana">Dana</option>
-                  <option value="Dana">Purvi</option>
-                  <option value="Dana">Ailyn</option>
-                  <option value="Dana">Mary</option>
-                  <option value="Dana">Alison</option>
 
+                <div class="input-field col m6 s12">
+                  <input placeholder="Name" name="name" id="name" type="text" value="" required>
+                  <label for="name" class="active" name="phone">Name</label>
+                </div>
 
-                </select>
-                <label>Preferred Stylist</label>
-              </div> 
               </div>
-
-              
               <h5>Services</h5>    
                  <br>    
               <!-- MULTIPLE SELECT -->
@@ -202,7 +196,7 @@
 
   
 
-
+>
 
 
   
