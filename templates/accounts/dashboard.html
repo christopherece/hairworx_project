@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="section section-posts brown lighten-2" style="">
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title">Bookings</span>
+              <table class="striped">
+                <thead>
+                  <tr>
+                    <th>Site</th>
+                    <th>Stylist</th>
+                    <th>Client Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Date Booked</th>
+                    <th>Time Booked</th>
+                    <th>Services</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for booking in bookings %}
+                  <tr>
+                    <td>{{booking.site.name}}</td>
+                    <td>{{booking.stylist_name}}</td>
+                    <td>{{booking.name}}</td>
+                    <td>{{booking.email}}</td>
+                    <td>{{booking.phone}}</td>
+                    <td>{{booking.date_chosen}}</td>
+                    <td>{{booking.time_chosen}}</td>
+                    <td>{{booking.services}}</td>
+
+
+                    <td>
+                      <a href="details.html" class="btn brown darken-1">Details</a>
+                    </td>
+                  </tr>
+                  {% endfor %}
+                  
+                </tbody>
+              </table>
+            </div>
+            <div class="card-action">
+              <ul class="pagination">
+                <li class="disabled">
+                  <a href="#!" class="brown-text">
+                    <i class="material-icons medium">chevron_left</i>
+                  </a>
+                </li>
+                <li class="active brown lighten-2">
+                  <a href="#!" class="white-text">1</a>
+                </li>
+                <li class="waves-effect">
+                  <a href="#!" class="brown-text">2</a>
+                </li>
+                <li class="waves-effect">
+                  <a href="#!" class="brown-text">3</a>
+                </li>
+                <li class="waves-effect">
+                  <a href="#!" class="brown-text">4</a>
+                </li>
+                <li class="waves-effect">
+                  <a href="#!" class="brown-text">5</a>
+                </li>
+                <li class="waves-effect">
+                  <a href="#!" class="brown-text">
+                    <i class="material-icons medium">chevron_right</i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% endblock %}

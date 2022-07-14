@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'gallery.apps.GalleryConfig',
     'services.apps.ServicesConfig',
     'pages.apps.PagesConfig',
+    'accounts.apps.AccountsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

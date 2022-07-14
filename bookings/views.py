@@ -1,3 +1,4 @@
+from multiprocessing import context
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.contrib import messages
@@ -32,7 +33,7 @@ def booking(request):
         email = request.POST['email']
         phone = request.POST['phone']
         stylist_name = request.POST.get('stylist_name', False)
-        location = request.POST.get('location', False)
+        site = Site.objects.get(id=request.POST["site"])
         description = request.POST.get('description')
         date_chosen = request.POST.get('date_chosen', False)
         time_chosen = request.POST.get('time_chosen', False)
@@ -42,7 +43,7 @@ def booking(request):
             name = name,
             email = email,
             phone = phone,
-            location = location,
+            site = site,
             stylist_name = stylist_name,
             description = description,
             date_chosen = date_chosen,

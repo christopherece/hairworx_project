@@ -7,8 +7,8 @@ from django.contrib.postgres.fields import ArrayField
 # Create your models here.
 class Booking(models.Model):
     SITE = (
-        ('1', 'Papatoetoe'),
-        ('2','Onehunga')
+        ('1', 'Onehunga'),
+        ('2','Papatoetoe')
     )
     STYLIST = (
         ('No Prefered','No Prefered'),
@@ -21,6 +21,7 @@ class Booking(models.Model):
 
     )
     name = models.CharField(max_length=200)
+    site = models.ForeignKey('Site',  on_delete=models.DO_NOTHING, null=True, blank=True)
     email = models.CharField(max_length=200, blank=True, null=True)
     phone = models.IntegerField()
     stylist_name = models.CharField(max_length=200, choices=STYLIST, null=True,blank=True)
@@ -50,6 +51,13 @@ class Site(models.Model):
     name = models.CharField(max_length=200)
     address = models.CharField(max_length=200)
 
+    def __str__(self):
+        return self.name
+
+class Worksite(models.Model):
+    name = models.CharField(max_length=200)
+    location = models.ForeignKey(Booking, on_delete=models.DO_NOTHING)
+    address = models.CharField(max_length=200)
 
     def __str__(self):
         return self.name
