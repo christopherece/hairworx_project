@@ -7,8 +7,8 @@ from django.contrib.postgres.fields import ArrayField
 # Create your models here.
 class Booking(models.Model):
     SITE = (
-        ('1', 'Onehunga'),
-        ('2','Papatoetoe')
+        ('1', 'Papatoetoe'),
+        ('2','Onehunga')
     )
     STYLIST = (
         ('No Prefered','No Prefered'),
