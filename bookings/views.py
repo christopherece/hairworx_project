@@ -60,7 +60,7 @@ def booking(request):
         #Send Email
         send_mail(
             'hairworx Booking',
-            'A Booking has been placed by ' + name + ' for ' + stylist_name +  '. Sign into the admin panel for more info',
+            'A Booking has been placed by ' + name + ' for ' + stylist_name +  '. Sign into the admin panel for more info at http://hairworx.ddns.net/users/dashboard',
             'hairworxnoreply@gmail.com',
             ['hworx@yahoo.com', 'christan_0508@yahoo.com'],
             fail_silently=False,
