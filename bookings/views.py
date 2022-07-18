@@ -2,7 +2,10 @@ from multiprocessing import context
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.core.mail import send_mail
+
 from .forms import BookingForm
+
 
 from bookings.models import Booking, Employee, Service, Site
 
@@ -53,5 +56,14 @@ def booking(request):
             )
 
         booking.save()
+
+        #Send Email
+        send_mail(
+            'hairworx Booking',
+            'A Booking has been placed by ' + name + ' for ' + stylist_name +  '. Sign into the admin panel for more info',
+            'hairworxnoreply@gmail.com',
+            ['hworx@yahoo.com', 'christan_0508@yahoo.com'],
+            fail_silently=False,
+)
         messages.success(request, 'Booking Confirm! Thank you and see you')
         return redirect('index')
