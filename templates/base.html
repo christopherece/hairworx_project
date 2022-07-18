@@ -56,7 +56,15 @@
                 class=""
                 {% endif %}
             ><a style="font-size: 1.3em;" href="{% url 'products' %}">Products</a></li>
-
+            {% if request.user.is_authenticated %}
+            <li
+                {% if 'login' in request.path %}
+                class="active"
+                {% else %}
+                class=""
+                {% endif %}
+            ><a style="font-size: 1.3em;" href="{% url 'logout' %}">Logout</a></li>
+            {% endif %}
           </ul>
     
           <ul id="nav-mobile" class="sidenav">

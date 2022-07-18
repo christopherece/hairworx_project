@@ -8,15 +8,16 @@
         <div class="col s12 m8 offset-m2 l6 offset-l3">
           <div class="card-panel login brown lighten-2 white-text center">
             <h2>Hairworx Login</h2>
-            <form action="#">
+            <form action="{% url 'login' %}" method="POST">
+              {% csrf_token %}
               <div class="input-field">
-                <i class="material-icons prefix medium">email</i>
-                <input type="email" id="email">
-                <label class="white-text" for="email">Email</label>
+                <i class="material-icons prefix medium">account_box</i>
+                <input type="text" name="username" id="username">
+                <label class="white-text" for="username">Username</label>
               </div>
               <div class="input-field">
                 <i class="material-icons prefix medium">lock</i>
-                <input type="password" id="password">
+                <input type="password" name="password" id="password">
                 <label class="white-text" for="password">Password</label>
               </div>
               <input type="submit" value="Login" class="btn btn-large btn-extended grey lighten-4 black-text">
