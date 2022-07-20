@@ -55,7 +55,17 @@
                 {% else %}
                 class=""
                 {% endif %}
-            ><a style="font-size: 1.3em;" href="{% url 'products' %}">Products</a></li>
+            ><a style="font-size: 1.3em;" href="{% url 'products' %}">Products</a>
+            </li>
+
+            <li
+                {% if 'create-booking' in request.path %}
+                class="active"
+                {% else %}
+                class=""
+                {% endif %}
+            ><a class="btn waves-effect waves-light brown lighten-1" style="font-size: 0.9em;" href="{% url 'create-booking' %}">Book an Appointment</a>
+            </li>
             {% if request.user.is_authenticated %}
             <li
                 {% if 'login' in request.path %}
@@ -67,12 +77,18 @@
             {% endif %}
           </ul>
     
-          <ul id="nav-mobile" class="sidenav">
+          <ul id="nav-mobile" class="sidenav brown lighten-3">
             <li><a href="{% url 'index' %}">Home</a></li>
             <li><a href="{% url 'services' %}">Services</a></li>
             <!-- <li><a href="#">Contact</a></li> -->
             <li><a href="{% url 'gallery' %}">Gallery</a></li>
             <li><a href="{% url 'products' %}">Products</a></li>
+            <li><a href="{% url 'create-booking' %}">Book an Appointment</a></li>
+            {% if request.user.is_authenticated %}
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+            {% endif %}
+
+
           </ul>
           <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
