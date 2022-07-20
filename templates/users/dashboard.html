@@ -33,8 +33,9 @@
                     <td>{{booking.phone}}</td>
                     <td>{{booking.date_chosen}}</td>
                     <td>{{booking.time_chosen}}</td>
-                    <td>
-                        {{booking.services}}
+                    <td>{% for item in booking.services %}
+                          {{item}}
+                        {% endfor %}
                     </td>
 
                     <td>
