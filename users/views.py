@@ -37,7 +37,7 @@ def logoutUser(request):
 
 @login_required(login_url='login')
 def dashboard(request):
-    bookings = Booking.objects.all()
+    bookings = Booking.objects.all().order_by('date_chosen')
     context = {'bookings':bookings}
     return render(request, 'users/dashboard.html', context)
 
