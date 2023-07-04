@@ -28,7 +28,10 @@ SECRET_KEY = 'django-insecure-p&r%&k5v2a(q91iqtbjvi9wgoi70mug$=!&0syo$xs*zprqk^@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '192.168.10.232','hairworx.ddns.net','119.224.29.234']
+ALLOWED_HOSTS = ['localhost', '192.168.10.135','hairworx.balaydalakay.com']
+CSRF_TRUSTED_ORIGINS = [
+	'https://hairworx.balaydalakay.com'
+]
 
 
 # Application definition
@@ -86,9 +89,11 @@ WSGI_APPLICATION = 'hairworx.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'hairworx',
+        'NAME': 'hairworx_tbl',
         'USER': 'postgres',
-        'PASSWORD': '@dm!nL0c@lH0$t',
+        'PASSWORD': '!pass1234',
+        'HOST':'192.168.10.225',
+        'PORT':'5432',
     }
 }
 
