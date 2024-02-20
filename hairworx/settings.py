@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 import os
 
-from psycopg2 import DATETIME
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,7 +27,7 @@ SECRET_KEY = 'django-insecure-p&r%&k5v2a(q91iqtbjvi9wgoi70mug$=!&0syo$xs*zprqk^@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '192.168.10.135','hairworx.balaydalakay.com']
+ALLOWED_HOSTS = ['localhost', '192.168.10.221','hairworx.balaydalakay.com']
 CSRF_TRUSTED_ORIGINS = [
 	'https://hairworx.balaydalakay.com'
 ]
@@ -37,6 +36,7 @@ CSRF_TRUSTED_ORIGINS = [
 # Application definition
 
 INSTALLED_APPS = [
+    'mssql',
     'users.apps.UsersConfig',
     'products.apps.ProductsConfig',
     'bookings.apps.BookingsConfig',
@@ -87,15 +87,34 @@ WSGI_APPLICATION = 'hairworx.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'default1': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'hairworx_tbl',
         'USER': 'postgres',
         'PASSWORD': '!pass1234',
         'HOST':'192.168.10.225',
         'PORT':'5432',
-    }
+    },
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',  # Use 'django.db.backends.sqlite3' for SQLite, other engines are available too
+        'NAME': BASE_DIR / "db.sqlite3",       # Path to your SQLite database file
+    },
+    'default2': {
+        # 'ENGINE': 'sql_server.pyodbc',
+        'ENGINE': 'mssql',
+        'NAME': 'haiworx_tbl',
+        'USER': 'sa',
+        'PASSWORD': 'L0c@lH0$t@dm!n!@#4',
+        'HOST': '192.168.10.221',
+        'PORT':'1433',
+        'OPTIONS': {
+            'driver': 'ODBC Driver 17 for SQL Server',
+        }
+    },
 }
+
+    
+
 
 
 # Password validation
